@@ -8,7 +8,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { fingerprint } from '../lib/checks.mjs';
-import { sha256 } from '../lib/state.mjs';
+import { sha256Text } from '../lib/state.mjs';
 
 const HARNESS = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SLUG = 'my-asset-form';
@@ -87,7 +87,7 @@ function setup(stage, docs = [], { input = INPUT } = {}) {
   // 승인 기록: 지문과 함께 승인 시점의 입력 파일, 설계 파일 해시를 적는다.
   const approvalText = (keyDoc) => {
     const design = fs.readFileSync(path.join(runs, SLUG, 'p2-design', 'design.md'), 'utf8');
-    return `status: approved\nslug: ${SLUG}\nfingerprint: ${fingerprint([keyDoc])}\ninput_hash: ${readState().input_hash}\ndesign_hash: ${sha256(design)}\n`;
+    return `status: approved\nslug: ${SLUG}\nfingerprint: ${fingerprint([keyDoc])}\ninput_hash: ${readState().input_hash}\ndesign_hash: ${sha256Text(design)}\n`;
   };
   // G4 를 돌리기 위한 준비: 컨펌된 키스크린(1:1)과 시스템 노드(2:1)
   const prepG4 = (keyDoc = screen()) => {
@@ -917,4 +917,15 @@ test('81. 금지어 검사는 부정문 안내를 잡지 않고, 일반 문장�
   const bad = build('고객정보 입력');
   assert.equal(bad.status, 1);
   assert.match(bad.stdout, /star_a_word/);
+});
+
+// ---- 줄바꿈(LF/CRLF) 무관 해시 ----------------------------------------
+test('82. git 이 입력·설계 파일 줄바꿈을 CRLF 로 바꿔도 입력 해시와 예전 승인이 깨지지 않는다 (0)', () => {
+  const t = setup('p4', [screen(), sys()]);
+  t.prepG4();
+  for (const rel of ['input.md', 'p2-design/design.md']) {
+    const file = path.join(t.dir, 'runs', SLUG, rel);
+    fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replace(/\r?\n/g, '\r\n'));
+  }
+  assert.equal(t.judge('G4').status, 0);
 });

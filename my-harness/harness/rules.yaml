@@ -2,7 +2,7 @@
 # 이 파일을 바꾸면 harness/tests 를 다시 돌린다.
 version: 1
 # judge.mjs 와 lib/*.mjs 의 해시. `node harness/pin.mjs` 로만 갱신한다. 불일치하면 종료 코드 3.
-judge_sha256: "ffb3db00d753a50a6874fe89a0ab9bde7775f48a279bf1134af1912d6d39e3e3"
+judge_sha256: "6be6ef55b650b68b83736d01c59de4667f1454888fa375255fcd16bbbf69837e"
 
 failure_limit: 3
 

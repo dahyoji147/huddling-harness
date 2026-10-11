@@ -1,0 +1,5 @@
+status: approved
+slug: my-asset-form-2step
+fingerprint: 27296082c2dbf08a4a7b6c57633eac159d30e42802742eebbe9dce4f5f0e1614
+input_hash: af39ba0ac9be582eb70493e982abff81f33b3bdce0f5f5436fab0803be0ee726
+design_hash: 3cf270fd99aceef2e4728cfe0d1fdbe98c4cd0d725051f659529c96a9837888d

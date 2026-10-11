@@ -2,21 +2,30 @@
   "slug": "my-asset-form-2step",
   "figma_file_key": "Eg36GNpIISqRjeA3WkT79g",
   "input_hash": "af39ba0ac9be582eb70493e982abff81f33b3bdce0f5f5436fab0803be0ee726",
-  "current_stage": "confirm",
+  "current_stage": "done",
   "completed_stages": [
     "p1",
     "p2",
-    "p3"
+    "p3",
+    "confirm",
+    "p4",
+    "p5"
   ],
   "gate_failures": {
     "G1": 0,
     "G2": 0,
-    "G3": 0
+    "G3": 0,
+    "confirm": 0,
+    "reconfirm": 0,
+    "G4": 0,
+    "G5": 0
   },
-  "confirm_status": "pending",
+  "confirm_status": "approved",
   "fingerprints": {
-    "p3": "27296082c2dbf08a4a7b6c57633eac159d30e42802742eebbe9dce4f5f0e1614"
+    "p3": "27296082c2dbf08a4a7b6c57633eac159d30e42802742eebbe9dce4f5f0e1614",
+    "p4": "f630dc28a7cf3e65ea6582ab8e2bdadb1942039f92084d36a4bc8633ac11a259",
+    "p5": "df748bcc5be3d7c6ec132927d7a9bad52a43d4d2bf1a403f7cf42845809caa36"
   },
   "blocked": false,
-  "updated_at": "2026-10-11T08:13:58.465Z"
+  "updated_at": "2026-10-11T08:39:24.355Z"
 }

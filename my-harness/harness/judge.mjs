@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { STAGE_FILES, CONFIRM_FILE, STAGES, runDir } from './lib/paths.mjs';
 import { HarnessError } from './lib/errors.mjs';
-import { loadState, saveState, readRunFile, writeRunFile, sha256 } from './lib/state.mjs';
+import { loadState, saveState, readRunFile, writeRunFile, sha256Text } from './lib/state.mjs';
 import { fetchNodes } from './lib/figma.mjs';
 import {
   designViolations, frameSize, accentViolations, starAViolations, starBViolations, screenContentViolations, clippedViolations, scopeViolations, fingerprint, nodeIds, walk,
@@ -68,7 +68,7 @@ function parseApproval(recorded, state) {
   const pick = (key) => recorded.match(new RegExp(`^${key}:\\s*(\\S+)`, 'm'))?.[1];
   let currentDesign;
   try {
-    currentDesign = sha256(readRunFile(state.slug, STAGE_FILES.p2));
+    currentDesign = sha256Text(readRunFile(state.slug, STAGE_FILES.p2));
   } catch {
     currentDesign = undefined;
   }
@@ -283,7 +283,7 @@ async function main() {
   const state = loadState(slug); // slug 형식도 여기서 검사한다
   if (state.blocked) throw new HarnessError(3, '이미 차단된 run');
   const input = fs.readFileSync(path.join(runDir(slug), 'input.md'));
-  if (sha256(input) !== state.input_hash) throw new HarnessError(3, '입력 파일이 바뀌었다 (input_hash 불일치)');
+  if (sha256Text(input) !== state.input_hash) throw new HarnessError(3, '입력 파일이 바뀌었다 (input_hash 불일치)');
 
   const g = GATES[gate];
   if (state.current_stage !== g.stage) {

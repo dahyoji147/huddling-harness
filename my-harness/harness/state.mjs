@@ -7,7 +7,7 @@
 // confirm 은 사람의 트리거("컨펌 받았어", "컨펌 반려: ...")가 있을 때만 오케스트레이터가 실행한다.
 import { CONFIRM_FILE, STAGE_FILES } from './lib/paths.mjs';
 import { HarnessError } from './lib/errors.mjs';
-import { initState, loadState, saveState, writeRunFile, readRunFile, requireHuman, assertInputUnchanged, sha256 } from './lib/state.mjs';
+import { initState, loadState, saveState, writeRunFile, readRunFile, requireHuman, assertInputUnchanged, sha256Text } from './lib/state.mjs';
 import { assertPinned } from './lib/pin.mjs';
 import { fetchNodes } from './lib/figma.mjs';
 import { fingerprint, nodeIds } from './lib/checks.mjs';
@@ -52,7 +52,7 @@ async function main() {
       writeRunFile(
         slug,
         CONFIRM_FILE,
-        `status: approved\nslug: ${slug}\nfingerprint: ${fingerprint(docs)}\ninput_hash: ${state.input_hash}\ndesign_hash: ${sha256(design)}\n`,
+        `status: approved\nslug: ${slug}\nfingerprint: ${fingerprint(docs)}\ninput_hash: ${state.input_hash}\ndesign_hash: ${sha256Text(design)}\n`,
       );
       state.confirm_status = 'approved';
     } else if (a === 'rejected') {

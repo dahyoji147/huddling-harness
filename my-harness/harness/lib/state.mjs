@@ -6,6 +6,10 @@ import { HarnessError } from './errors.mjs';
 
 export const sha256 = (data) => crypto.createHash('sha256').update(data).digest('hex');
 
+// 텍스트 파일(입력, 설계)의 해시는 줄바꿈 종류(LF/CRLF)와 무관하게 계산한다.
+// Windows 에서 git 이 체크아웃할 때 줄바꿈을 바꿔도 예전 승인과 입력 해시가 깨지지 않게 하려는 것이다.
+export const sha256Text = (data) => sha256(Buffer.from(String(data).replace(/\r\n/g, '\n'), 'utf8'));
+
 // 모든 진입점(judge, state)이 slug 를 같은 규칙으로 검사한다. runs/ 밖으로 나가는 경로를 막는다.
 export function assertSlug(slug) {
   if (typeof slug !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
@@ -52,7 +56,7 @@ export function saveState(state) {
 
 // 입력 파일이 init 때와 같은지 확인한다. 다르면 차단(3).
 export function assertInputUnchanged(state) {
-  const current = sha256(fs.readFileSync(path.join(runDir(state.slug), 'input.md')));
+  const current = sha256Text(fs.readFileSync(path.join(runDir(state.slug), 'input.md')));
   if (current !== state.input_hash) throw new HarnessError(3, '입력 파일이 바뀌었다 (input_hash 불일치)');
 }
 
@@ -66,7 +70,7 @@ export function initState(slug, inputPath, figmaFileKey) {
   const state = {
     slug,
     figma_file_key: figmaFileKey ?? null,
-    input_hash: sha256(input),
+    input_hash: sha256Text(input),
     current_stage: 'p1',
     completed_stages: [],
     gate_failures: {},
