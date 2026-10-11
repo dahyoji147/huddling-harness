@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/harness/guard.mjs\"",
+            "shell": "bash",
+            "timeout": 10,
+            "onFailure": "block",
+            "statusMessage": "하네스 보호 대상인지 확인하는 중"
+          }
+        ]
+      }
+    ]
+  }
+}

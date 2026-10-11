@@ -1,0 +1,11 @@
+{
+  "name": "huddling-harness",
+  "private": true,
+  "type": "module",
+  "description": "허들링 화면 하네스: 단계별 에이전트 작업과 스크립트 판정",
+  "scripts": {
+    "test": "node --test harness/tests/*.test.mjs",
+    "check": "node harness/check-pin.mjs && node --test harness/tests/*.test.mjs",
+    "pin": "node harness/pin.mjs"
+  }
+}

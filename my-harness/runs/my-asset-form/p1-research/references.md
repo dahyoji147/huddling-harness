@@ -1,0 +1,9 @@
+# 레퍼런스 모음
+- 티맵 (장소 등록, 신청하기): https://uibowl.io/name/%ED%8B%B0%EB%A7%B5?patterns=%EC%8B%A0%EC%B2%AD%ED%95%98%EA%B8%B0&imgId=cmccz5brf000zl507upo7jgkv — 상단 탭 아래 필수(*) 표시 라벨, 드롭다운 필드, "업종 상세 태그" 입력창 아래 "제거하기/추가하기" 텍스트 버튼이 있는 긴 등록 폼.
+- 캠핏 (장비 등록, 리뷰쓰기): https://uibowl.io/name/%EC%BA%A0%ED%95%8F?patterns=%EB%A6%AC%EB%B7%B0%EC%93%B0%EA%B8%B0&imgId=cmsicz4p4000il1049l2ejqrk — 큰 첨부 이미지 미리보기에 닫기(X)와 태그하기 버튼, 그 아래 첨부 유의 안내 문구와 정책 링크 행, 하단에 비활성 상태의 전폭 버튼("장비를 태그해주세요").
+- 씀 (테마 설정, 글쓰기): https://uibowl.io/name/%EC%94%80?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=cmc8m85hu000bju07tn992jey — 바텀시트 상단에 제목과 둥근 "완료" 버튼, 밝은/어두운/자동을 알약형 라디오 칩으로 나란히 배치.
+- 리멤버 (커뮤니티 선택, 글쓰기): https://uibowl.io/name/%EB%A6%AC%EB%A9%A4%EB%B2%84?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=cm40kngwz002cmn0ch9yb62mj — 바텀시트에 섹션 소제목(내 직무·업종 / 관심사·주제)으로 묶인 라디오 리스트, 상단 안내 박스.
+- Adobe Express (다운로드 시트, 글쓰기): https://uibowl.io/name/Adobe%20Express%3A%20AI%20%EC%82%AC%EC%A7%84%20%EB%B0%8F%20%EB%B9%84%EB%94%94%EC%98%A4?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=clx8xod6d0037l50c67bkl2vf — 바텀시트 안에 라디오 선택, 파일 포맷 드롭다운, 하단 전폭 둥근 확정 버튼.
+- 골프존 (새 피드, 글쓰기): https://uibowl.io/name/%EA%B3%A8%ED%94%84%EC%A1%B4?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=cmunkfg4400shjs04zxjutfm5 — 본문 입력 아래 "추천태그" 소제목과 가로 스크롤 태그 칩, 구분선으로 나눈 행 목록 끝에 "공개 / 비공개" 현재값이 오른쪽에 보이는 공개 설정 행.
+- 집지켜 (질문 작성, 글쓰기): https://uibowl.io/name/%EC%A7%91%EC%A7%80%EC%BC%9C?patterns=%EA%B8%80%EC%93%B0%EA%B8%B0&imgId=cmubauao60015l504y30su7zq — 항목마다 소제목과 선택 칩 묶음을 세로로 쌓고, 하단 고정 버튼 위에 "수정 불가" 유의 문구를 둔 폼.
+- 투두메이트 (카테고리 등록, 생성하기): https://uibowl.io/name/%ED%88%AC%EB%91%90%EB%A9%94%EC%9D%B4%ED%8A%B8?patterns=%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&patternName=%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%20%EB%93%B1%EB%A1%9D — 상단에 취소 화살표와 "완료", 제목 입력 아래 "공개설정 — 나만 보기" 행(잠금 아이콘 + 현재값 + 화살표)을 눌러 옵션을 고르는 구조.

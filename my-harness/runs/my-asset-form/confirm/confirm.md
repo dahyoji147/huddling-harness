@@ -1,0 +1,3 @@
+status: approved
+slug: my-asset-form
+fingerprint: 0dd71630c159ed4a82fd1133e79f628704f650185ba8b9d86908f04dde610113

@@ -1,0 +1,29 @@
+{
+  "slug": "my-asset-form",
+  "figma_file_key": "Eg36GNpIISqRjeA3WkT79g",
+  "input_hash": "b0e6019df62f3142abe967689da09ad46a148af7e5eb68d2d83d1d043a8a850b",
+  "current_stage": "done",
+  "completed_stages": [
+    "p1",
+    "p2",
+    "p3",
+    "confirm",
+    "p4",
+    "p5"
+  ],
+  "gate_failures": {
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0,
+    "G5": 0
+  },
+  "confirm_status": "approved",
+  "fingerprints": {
+    "p3": "0dd71630c159ed4a82fd1133e79f628704f650185ba8b9d86908f04dde610113",
+    "p4": "71736129aa94177bb5e6f0cd5b1c0b1a748da230b1176a481e9de3b447940107",
+    "p5": "1440377f98e87d2e10498147c47f44471a88f6ed895c752f54c054da95ffbefe"
+  },
+  "blocked": false,
+  "updated_at": "2026-10-11T07:37:08.788Z"
+}

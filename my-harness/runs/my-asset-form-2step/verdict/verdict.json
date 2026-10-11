@@ -1,0 +1,10 @@
+{
+  "gate": "G3",
+  "status": "pass",
+  "violations": [],
+  "details": [],
+  "note": null,
+  "stage": "p3",
+  "next_stage": "confirm",
+  "at": "2026-10-11T08:13:58.469Z"
+}
